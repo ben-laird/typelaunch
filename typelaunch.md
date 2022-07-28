@@ -1,5 +1,9 @@
 # TypeLaunch
 
+![GitHub](https://img.shields.io/github/license/ben-laird/typelaunch)
+![GitHub issues](https://img.shields.io/github/issues-raw/ben-laird/typelaunch)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ben-laird/typelaunch)
+
 TypeLaunch is an opinionated, public template repository made to easily bootstrap a TypeScript library with the latest features and best practices.
 
 ## Conventions
