@@ -55,6 +55,8 @@ TypeLaunch is an opinionated template. These opinions are described below:
 - Markdownlint does not use `package.json`, though making a config file isn't really necessary for this project.
 - I've worked on projects where the root directory is a mess of config files with no way to hide them because they all had to be at the root. Therefore, I've tried to hide as much of the config in [`package.json`](package.json) as I can. Most of these config keys can be moved to their own files if necessary by making a `<package>rc.*` file at the root. Read the package's documentation before doing so to see if it is possible, but if so, feel free to.
 - In the same spirit, the [license](.github/LICENSE) and [code of conduct](.github/CODE_OF_CONDUCT.md) are in the `.github` folder, but can be moved to the project root.
+- Part of the reason I made this template is to have full control over what tools I used and how I used them. I brought this design philosophy to TypeLaunch as much as I could; if a package is getting in your way, you just need to remove any mentions of it in `.husky` hooks or `package.json` scripts and then run `npm uninstall <package>`. It's that simple.
+- TypeLaunch is also dependency-free for a reason: the thing shouldn't get in the way of what your application needs and should only help you if you develop it. Usage of TypeLaunch not contributing to build sizes is also a nice plus.
 
 ## Commands
 
