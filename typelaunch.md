@@ -57,6 +57,7 @@ TypeLaunch is an opinionated template. These opinions are described below:
 - In the same spirit, the [license](.github/LICENSE) and [code of conduct](.github/CODE_OF_CONDUCT.md) are in the `.github` folder, but can be moved to the project root.
 - Part of the reason I made this template is to have full control over what tools I used and how I used them. I brought this design philosophy to TypeLaunch as much as I could; if a package is getting in your way, you just need to remove any mentions of it in `.husky` hooks or `package.json` scripts and then run `npm uninstall <package>`. It's that simple.
 - TypeLaunch is also dependency-free for a reason: the thing shouldn't get in the way of what your application needs and should only help you if you develop it. Usage of TypeLaunch not contributing to build sizes is also a nice plus.
+- Errors are your friend. No seriously. I've configured TypeLaunch to berate the developer with errors, exceptions, and test failures. Errors are also the lifeblood of test-driven development, a practice I'm getting better at following. Adding these errors is meant to make sure the code, docs, and tests are in tip-top shape.
 
 ## Commands
 
