@@ -10,8 +10,8 @@ TypeLaunch is an opinionated, public template repository made to easily bootstra
 
 This project adheres to the following conventions to keep code writing and reviewing easy.
 
-1. Conventional Commits
-2. Semantic Versioning
+1. [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+2. [Semantic Versioning](https://semver.org)
 3. ESLint recommended rules
 4. Prettier recommended rules
 
