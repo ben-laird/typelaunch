@@ -1,0 +1,2 @@
+# No need to lint packages installed in node_modules
+node_modules
