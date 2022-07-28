@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    // Definitely recommend!
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "DavidAnson.vscode-markdownlint",
+    "vivaxy.vscode-conventional-commits",
+    "Gruntfuggly.todo-tree",
+    "GitHub.vscode-pull-request-github",
+    // Good for JSX and writing React libs
+    "formulahendry.auto-rename-tag"
+  ]
+}
