@@ -83,7 +83,7 @@
     "!**/*.test.*",
     "!**/*.json",
     "CHANGELOG.md",
-    "LICENSE",
+    ".github/LICENSE",
     "README.md"
   ],
   "ava": {
