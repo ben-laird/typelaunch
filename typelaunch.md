@@ -6,6 +6,47 @@
 
 TypeLaunch is an opinionated, public template repository made to easily bootstrap a TypeScript library with the latest features and best practices.
 
+## Pipeline
+
+### Setup
+
+To use this template
+
+There are multiple edits that should be made to personalize TypeLaunch. Below is a checklist in order of importance.
+
+1. Add a `name` beyond "example" in [`package.json`](package.json) and [`package-lock.json`](package-lock.json)
+2. Replace all instances of the placeholder name "John Appleseed" with the project owner's name.
+   1. [`package.json`](package.json)
+   2. [`LICENSE`](.github/LICENSE)
+3. Replace all instances of the placeholder email "johnnyappleseed@example.com" with the project owner's email address.
+   1. [`package.json`](package.json)
+   2. [`CODE_OF_CONDUCT.md`](.github/CODE_OF_CONDUCT.md)
+4. Customize these fields in [`package.json`](package.json):
+   1. `description`
+   2. `repository`: provide a link to the GitHub repo this project resides in
+   3. `homepage`: provide a link to one of these resources
+      1. Front-facing webpage
+      2. Documentation
+      3. GitHub repo
+   4. `bugs.url`: provide a link to your bug tracker
+   5. `keywords`
+
+### Cycle
+
+#### Opening
+
+When opening the project, create two terminal windows. In one, run `npm watch:build`, and in the other, run `npm watch:test`. These will set up tsc and AVA to rebuild and retest your project, respectively, every time the project is saved. Best practice is to stop these terminals when closing the project, though that's not entirely necessary.
+
+#### Committing
+
+##### VSCode
+
+When a commit is ready to be made, head to the Version Control pane and stage the files you'd like to commit. Next, look for the circle above the commit field labeled "Conventional Commits", or hit `Ctrl/Cmd + Shift + P` to open the Command Palette and find it that way. In the Command Palette, type "Conventional Commits" and find the command with that title.
+
+The Conventional Commits extension will walk you through the steps to making a conventional commit that commitlint will accept. In fact, commitlint will be linting your commit message as you type it via the [`commit-msg`](.husky/commit-msg) hook. If you provide a description/body in your commit, when finished, the Conventional Commits extension will automatically commit your changes, running the [`precommit`](.husky/pre-commit) hook.
+
+#### Command Line
+
 ## Conventions
 
 This project adheres to the following conventions to keep code writing and reviewing easy.
@@ -52,7 +93,6 @@ TypeLaunch is an opinionated template. These opinions are described below:
   - All recommended ESLint presets are followed, with the exception of two additional rules. They are set to warn and not throw an exception because they are slightly pedantic.
     - `spaced-comment` is in `always` mode, which will "enforce consistent spacing after the // or /\* in a comment". See [here](https://eslint.org/docs/latest/rules/spaced-comment#rule-details) for details.
     - `yoda` is in `never` mode, which will disallow "Yoda conditions" where a literal is compared to a variable and not the other way around. See [here](https://eslint.org/docs/latest/rules/yoda#rule-details) for details.
-- Markdownlint does not use `package.json`, though making a config file isn't really necessary for this project.
 - I've worked on projects where the root directory is a mess of config files with no way to hide them because they all had to be at the root. Therefore, I've tried to hide as much of the config in [`package.json`](package.json) as I can. Most of these config keys can be moved to their own files if necessary by making a `<package>rc.*` file at the root. Read the package's documentation before doing so to see if it is possible, but if so, feel free to.
 - In the same spirit, the [license](.github/LICENSE) and [code of conduct](.github/CODE_OF_CONDUCT.md) are in the `.github` folder, but can be moved to the project root.
 - Part of the reason I made this template is to have full control over what tools I used and how I used them. I brought this design philosophy to TypeLaunch as much as I could; if a package is getting in your way, you just need to remove any mentions of it in `.husky` hooks or `package.json` scripts and then run `npm uninstall <package>`. It's that simple.
