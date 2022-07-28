@@ -62,32 +62,32 @@ TypeLaunch is an opinionated template. These opinions are described below:
 
 Utilize these commands in your development pipeline by running `npm run <command>`. For convenience, a table for these commands is included here:
 
-| Command        | Description                                                                                                                                                      |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| build          | run all `build:*` commands in parallel                                                                                                                           |
-| build:main     | build the project using `tsc` according to the specs in [tsconfig.json](tsconfig.json)                                                                           |
-| build:module   | build the project using `tsc` according to the specs in [tsconfig.module.json](tsconfig.module.json.json)                                                        |
-| watch:build    | build the project in watch mode                                                                                                                                  |
-| watch:test     | run project tests in watch mode                                                                                                                                  |
-| fix            | run all fix commands sequentially                                                                                                                                |
-| fix:prettier   | run prettier on all `src` .ts files and fix some violations                                                                                                      |
-| fix:lint       | run eslint on all .ts files and fix some violations                                                                                                              |
-| fix:markdown   | run markdownlint on all .md files and fix some violations as well as check spelling for .md files                                                                |
-| test           | run all test commands sequentially                                                                                                                               |
-| test:lint      | run eslint on all .ts files                                                                                                                                      |
-| test:prettier  | run prettier on all `src` .ts files                                                                                                                              |
-| test:spelling  | check spelling for [`README.md`](README.md), all `.github/*.md` files, and all `src` .ts files                                                                   |
-| test: markdown | run markdownlint on all .md files as well as check spelling for .md files                                                                                        |
-| test:unit      | run AVA tests and nyc code coverage                                                                                                                              |
-| cov            | unit test, create coverage reports, and open the html coverage report                                                                                            |
-| cov:html       | create html coverage report                                                                                                                                      |
-| cov:lcov       | create lcov coverage report                                                                                                                                      |
-| cov:check      | run an nyc report and the `check-coverage` command                                                                                                               |
-| doc            | create html documentation and open it                                                                                                                            |
-| doc:html       | create html documentation                                                                                                                                        |
-| doc:json       | create json documentation                                                                                                                                        |
-| lint-staged    | run the `lint-staged` cli                                                                                                                                        |
-| release        | create a release, tagging the most recent commit, creating a changelog, and bumping version according to Conventional Commits and Semantic Versioning guidelines |
-| prepare        | setup husky hook tool                                                                                                                                            |
+| Command        | Description                                                                                        |
+| -------------- | -------------------------------------------------------------------------------------------------- |
+| build          | run all `build:*` commands in parallel                                                             |
+| build:main     | build the project using `tsc` and specs in [tsconfig.json](tsconfig.json)                          |
+| build:module   | build the project using `tsc` and specs in [tsconfig.module.json](tsconfig.module.json.json)       |
+| watch:build    | build the project in watch mode                                                                    |
+| watch:test     | run project tests in watch mode                                                                    |
+| fix            | run all fix commands sequentially                                                                  |
+| fix:prettier   | run prettier on all `src` .ts files and fix some violations                                        |
+| fix:lint       | run eslint on all .ts files and fix some violations                                                |
+| fix:markdown   | run markdownlint on all .md files and fix some violations as well as check spelling                |
+| test           | run all test commands sequentially                                                                 |
+| test:lint      | run eslint on all .ts files                                                                        |
+| test:prettier  | run prettier on all `src/**/*.ts` files                                                            |
+| test:spelling  | check spelling for [`README.md`](README.md), all `.github/*.md` files, and all `src/**/*.ts` files |
+| test: markdown | run markdownlint on all .md files as well as check spelling for .md files                          |
+| test:unit      | run AVA tests and nyc code coverage                                                                |
+| cov            | unit test, create coverage reports, and open the html coverage report                              |
+| cov:html       | create html coverage report                                                                        |
+| cov:lcov       | create lcov coverage report                                                                        |
+| cov:check      | run an nyc report and the `check-coverage` command                                                 |
+| doc            | create html documentation and open it                                                              |
+| doc:html       | create html documentation                                                                          |
+| doc:json       | create json documentation                                                                          |
+| lint-staged    | run the `lint-staged` cli                                                                          |
+| release        | create a release                                                                                   |
+| prepare        | setup husky hook tool                                                                              |
 
 Not included in the table are the `___Section` commands, which are mostly meant to visually split the `package.json` scripts apart. If ever it is unclear what sections of commands are available in the developer pipeline, simply run `npm run sections` to get the summary of each section of commands. To get a summary of a single section, run `npm run ___Section:<section-name>`.
