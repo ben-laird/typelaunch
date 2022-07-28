@@ -92,7 +92,8 @@
     "typescript": {
       "rewritePaths": {
         "src/": "build/main/"
-      }
+      },
+      "compile": "tsc"
     },
     "files": [
       "!build/module/**"
