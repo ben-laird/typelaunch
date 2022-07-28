@@ -168,7 +168,7 @@
     ]
   },
   "lint-staged": {
-    "*.md": "npm run fix:markdown",
+    "*.md": "markdownlint --fix --ignore node_modules",
     "**/*.ts": "tsc-files --noEmit"
   }
 }
