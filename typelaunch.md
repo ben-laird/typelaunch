@@ -84,7 +84,7 @@ This project makes use of some dev dependencies that enforce following the above
 - Use AVA and nyc for test-driven or behavior-driven development. Before working on the project, run `npm run watch:build` at the root of the project to build it whenever it's saved, then in a separate terminal instance, run `npm run watch:test` to run tests in watch mode. See the [Commands](typelaunch.md#commands) section for more details.
 - Code should reside in the `src` directory and only in the `src` directory. All tools are configured to read files only from the `src` directory. `types` is a subdirectory intended to house type declarations for code or for modules that need to be declared. Oftentimes it's only used for the latter as the code usually implicitly contains its own type declarations through classes, functions, etcetera.
 
-## Opinions
+## Opinions and Philosophy
 
 TypeLaunch is an opinionated template. These opinions are described below:
 
