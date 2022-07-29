@@ -1,3 +1,6 @@
 {
-  "conventionalCommits.scopes": ["package", "index", "scopes"]
+  "conventionalCommits.scopes": ["package", "index", "scopes"],
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-issue-config.json": "file:///Users/benjaminlaird/Desktop/Life/Projects/Programming/typelaunch/.github/ISSUE_TEMPLATE/config.yaml"
+  }
 }
