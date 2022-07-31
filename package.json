@@ -120,6 +120,9 @@
       "ecmaVersion": "latest",
       "sourceType": "module"
     },
+    "ignorePatterns": [
+      "build"
+    ],
     "plugins": [
       "@typescript-eslint"
     ],
