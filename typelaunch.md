@@ -86,7 +86,14 @@ This project makes use of some dev dependencies that enforce following the above
 
 ## Opinions and Philosophy
 
-TypeLaunch is an opinionated template. These opinions are described below:
+TypeLaunch is an opinionated template. The most important tenets of TypeLaunch are:
+
+- Clutter bad, :x: intuitive structure good :white_check_mark:
+- Rigidity bad, :x: easy customization good :white_check_mark:
+- Looseness bad, :x: constructive strictness good :white_check_mark:
+- Manual bad, :x: automatic help good :white_check_mark:
+
+The more granular opinions are described below:
 
 - ESLint Prettier, and CSpell are pre-configured in the [project's package file](package.json). This is where most of the opinions are.
   - Prettier has no config key because all presets/recommendations are followed.
