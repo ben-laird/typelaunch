@@ -1,0 +1,28 @@
+name: Feature Request
+description: Request a new or improved feature that you'd like to see
+labels: ["enhancement", "triage"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Summary
+      description: Write a concise, meaningful summary of the improvement you'd like to see.
+      placeholder: Here's the gist...
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Improvement Description
+      description: Describe the proposal in detail.
+      placeholder: It should work like this...
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this feature request, you agree to follow our [Code of Conduct](../CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
