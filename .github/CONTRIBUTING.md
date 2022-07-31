@@ -4,7 +4,7 @@ Contributions are always welcome! Please make sure to follow the [Code of Conduc
 
 ## Getting Started
 
-Before beginning, read the [README](../README.md) to familiarize yourself with the project. Next, look for any open issues you could contribute to. If there are assignees, contact them and ask to be a part of the contribution team. If you'd like to work alone on a project with no assignees, assign the issue to yourself.
+Before beginning, read the [README](../README.md) to familiarize yourself with the project. Next, look for any open issues you could contribute to; add the `help-wanted` or `good-first-issue` labels to your search to find issues with contributors looking for help or great issues to make a first contribution to. If there are assignees, contact them and ask to be a part of the contribution team.
 
 To begin contributing, clone the project locally. Next, run `npm install` to install dependencies (and dev dependencies) as well as initialize husky hooks. Afterwards, run `npm run watch:build` and in a separate terminal instance run `npm run watch:test` to build and test the project with watch mode. These commands encourage test-driven development.
 
