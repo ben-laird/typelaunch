@@ -6,11 +6,11 @@ An opinionated, public template repository made to easily bootstrap a TypeScript
 
 ## Made with TypeLaunch
 
-This project was launched with the TypeLaunch public template repository! See [`typelaunch.md`](typelaunch.md) for details.
+This project was launched with the TypeLaunch public template repository! See [`typelaunch.md`](typelaunch/typelaunch.md) for details.
 
 ## Versioning
 
-This library follows the [Semantic Versioning](https://semver.org) convention. See [`typelaunch.md #conventions`](typelaunch.md#conventions) for other conventions this project follows.
+This library follows the [Semantic Versioning](https://semver.org) convention. See [`typelaunch.md #conventions`](typelaunch/typelaunch.md#conventions) for other conventions this project follows.
 
 ## License
 

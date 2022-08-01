@@ -12,8 +12,8 @@ To begin contributing, clone the project locally. Next, run `npm install` to ins
 
 If you have a problem that needs to be fixed or would like to suggest some new functionality, you can submit an issue using the template that best represents the issue you have.
 Before creating a new issue, check the issues list to see if the issue is already documented; if it is not documented, feel free to create a new issue! Fill out as many sections of the issue form as possible; the more information to work with, the better the fix or new functionality will be.
-If you think you know a way to close the issue, follow the steps in the [Getting Started](typelaunch-contributing.md#getting-started) section to get your development environment going.
+If you think you know a way to close the issue, follow the steps in the [Getting Started](../typelaunch/typelaunch-contributing.md#getting-started) section to get your development environment going.
 
 ## Contributing to TypeLaunch
 
-If you'd like to contribute to TypeLaunch, see the [TypeLaunch contributing guide](typelaunch-contributing.md) for TypeLaunch-specific tips.
+If you'd like to contribute to TypeLaunch, see the [TypeLaunch contributing guide](../typelaunch/typelaunch-contributing.md) for TypeLaunch-specific tips.

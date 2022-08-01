@@ -4,7 +4,7 @@ Contributions to TypeLaunch are greatly appreciated. Please make sure to follow 
 
 ## Getting Started
 
-For starters, read the TypeLaunch [README](../README.md) as well as [`typelaunch.md`](../typelaunch.md) to familiarize yourself with the project and how it operates. Please especially pay attention to the [opinions and philosophy section](../typelaunch.md#opinions-and-philosophy), as any feature request, bug report, or other issue not in line with the opinions and philosophy of TypeLaunch will most likely be marked with a `wontfix` label and/or closed and locked.
+For starters, read the TypeLaunch [README](../README.md) as well as [`typelaunch.md`](typelaunch.md) to familiarize yourself with the project and how it operates. Please especially pay attention to the [opinions and philosophy section](typelaunch.md#opinions-and-philosophy), as any feature request, bug report, or other issue not in line with the opinions and philosophy of TypeLaunch will most likely be marked with a `wontfix` label and/or closed and locked.
 
 For simplicity, the most important tenets of TypeLaunch are:
 
