@@ -1,6 +1,6 @@
 # TypeLaunch
 
-[![License](https://img.shields.io/badge/license-MIT-green)](.github/LICENSE) ![GitHub issues](https://img.shields.io/github/issues-raw/ben-laird/typelaunch) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ben-laird/typelaunch)
+![GitHub](https://img.shields.io/github/license/ben-laird/typelaunch) ![GitHub issues](https://img.shields.io/github/issues-raw/ben-laird/typelaunch) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ben-laird/typelaunch)
 
 An opinionated, public template repository made to easily bootstrap a TypeScript library with the latest features and best practices. If you use your own template, put your own project's README right here!
 
