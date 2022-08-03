@@ -153,7 +153,8 @@
       "transpiled",
       "typedoc",
       "untracked",
-      "lcov"
+      "lcov",
+      "snyk"
     ],
     "ignorePaths": [
       "package.json",
