@@ -47,6 +47,7 @@
   "compileOnSave": false,
   "typedocOptions": {
     "entryPoints": ["src/index.ts"],
-    "out": "docs"
+    "out": "docs",
+    "exclude": "**/*.test.ts"
   }
 }
