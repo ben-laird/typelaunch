@@ -1,7 +1,7 @@
 /**
  * A simple function meant to demonstrate all the features of TypeLaunch, from testing to docs to more!
  * This simply greets the user in the console and returns what it sent to the console.
- * @param name The name of the person you'd like to greet
+ * @param name - The name of the person you'd like to greet
  * @returns A string of the greeting with the name inserted
  */
 export const greet = (name: string) => {
