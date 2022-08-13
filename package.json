@@ -46,7 +46,7 @@
     "doc:html": "typedoc src/",
     "doc:json": "typedoc src/ --json docs/typedoc.json",
     "___Section:clean": "echo \"clean unimportant directories\"",
-    "clean":"run-p clean:*",
+    "clean": "run-p clean:*",
     "clean:build": "rm -r build",
     "clean:nyc": "rm -r .nyc_output",
     "clean:docs": "rm -r docs",
