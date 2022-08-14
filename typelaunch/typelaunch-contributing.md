@@ -1,6 +1,6 @@
 # Contributing to TypeLaunch
 
-Contributions to TypeLaunch are greatly appreciated. Please make sure to follow the [Code of Conduct](CODE_OF_CONDUCT.md) when contributing.
+Contributions to TypeLaunch are greatly appreciated. Please make sure to follow the [Code of Conduct](../.github/CODE_OF_CONDUCT.md) when contributing.
 
 ## Getting Started
 
