@@ -67,6 +67,8 @@
     "ava": "^4.3.1",
     "cspell": "^6.4.1",
     "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
     "markdownlint": "^0.26.1",
@@ -101,11 +103,15 @@
       },
       "compile": "tsc"
     },
-    "files": ["!build/module/**"]
+    "files": [
+      "!build/module/**"
+    ]
   },
   "nyc": {
     "extends": "@istanbuljs/nyc-config-typescript",
-    "exclude": ["**/*.test.js"]
+    "exclude": [
+      "**/*.test.js"
+    ]
   },
   "eslintConfig": {
     "env": {
@@ -113,17 +119,32 @@
       "es2021": true,
       "node": true
     },
-    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended"
+    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "ecmaVersion": "latest",
       "sourceType": "module"
     },
-    "ignorePatterns": ["build"],
-    "plugins": ["@typescript-eslint"],
+    "ignorePatterns": [
+      "build",
+      "docs"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ],
     "rules": {
-      "spaced-comment": ["warn", "always"],
-      "yoda": ["warn", "never"]
+      "spaced-comment": [
+        "warn",
+        "always"
+      ],
+      "yoda": [
+        "warn",
+        "never"
+      ]
     }
   },
   "cspell": {
@@ -156,7 +177,9 @@
     "allowCompoundWords": true
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "lint-staged": {
     "*.md": "markdownlint --fix --ignore node_modules",
