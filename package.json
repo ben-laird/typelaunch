@@ -52,7 +52,7 @@
     "clean:docs": "rm -r docs",
     "___Section:cicd": "echo \"run CI/CD commands\"",
     "lint-staged": "lint-staged",
-    "release": "standard-version",
+    "release": "shipjs prepare",
     "___Section:underhood": "echo \"run commands under the hood\"",
     "prepare": "husky install"
   },
@@ -75,6 +75,7 @@
     "nyc": "^15.1.0",
     "open-cli": "^7.0.1",
     "prettier": "^2.7.1",
+    "shipjs": "0.24.4",
     "source-map-support": "^0.5.21",
     "standard-version": "^9.5.0",
     "ts-node": "^10.9.1",
@@ -100,15 +101,11 @@
       },
       "compile": "tsc"
     },
-    "files": [
-      "!build/module/**"
-    ]
+    "files": ["!build/module/**"]
   },
   "nyc": {
     "extends": "@istanbuljs/nyc-config-typescript",
-    "exclude": [
-      "**/*.test.js"
-    ]
+    "exclude": ["**/*.test.js"]
   },
   "eslintConfig": {
     "env": {
@@ -116,30 +113,17 @@
       "es2021": true,
       "node": true
     },
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended"
-    ],
+    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "ecmaVersion": "latest",
       "sourceType": "module"
     },
-    "ignorePatterns": [
-      "build"
-    ],
-    "plugins": [
-      "@typescript-eslint"
-    ],
+    "ignorePatterns": ["build"],
+    "plugins": ["@typescript-eslint"],
     "rules": {
-      "spaced-comment": [
-        "warn",
-        "always"
-      ],
-      "yoda": [
-        "warn",
-        "never"
-      ]
+      "spaced-comment": ["warn", "always"],
+      "yoda": ["warn", "never"]
     }
   },
   "cspell": {
@@ -172,9 +156,7 @@
     "allowCompoundWords": true
   },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "extends": ["@commitlint/config-conventional"]
   },
   "lint-staged": {
     "*.md": "markdownlint --fix --ignore node_modules",
