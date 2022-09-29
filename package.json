@@ -1,12 +1,12 @@
 {
   "name": "example",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "private": true,
   "description": "A blank canvas of a repository",
   "author": "John Appleseed <johnnyappleseed@example.com>",
-  "main": "build/main/index.js",
-  "typings": "build/main/index.d.ts",
-  "module": "build/module/index.js",
+  "main": "artifacts/build/main/index.js",
+  "typings": "artifacts/build/main/index.d.ts",
+  "module": "artifacts/build/module/index.js",
   "repository": "https://github.com/",
   "homepage": "https://github.com/",
   "bugs": {
@@ -17,45 +17,50 @@
   "keywords": [],
   "scripts": {
     "sections": "run-s ___Section:*",
-    "___Section:build": "echo \"build: build the project\"",
+    "___Section:build": "echo 'build: build the project'",
     "build": "run-p build:*",
     "build:main": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
-    "___Section:watch": "echo \"watch: run commands in watch mode\"",
+    "___Section:watch": "echo 'watch: run commands in watch mode'",
     "watch:build": "tsc -p tsconfig.json -w",
     "watch:test": "nyc --silent ava --watch",
-    "___Section:fix": "echo \"fix: run linters and formatters to prettify codebase\"",
+    "___Section:check": "echo 'check: quickly check codebase runs correctly'",
+    "check": "run-s check:*",
+    "check:build": "npm run build",
+    "check:ts": "ts-node src/index.ts",
+    "check:js": "node artifacts/build/main/index.js",
+    "___Section:fix": "echo 'fix: run linters and formatters to prettify codebase'",
     "fix": "run-s fix:*",
-    "fix:prettier": "prettier \"src/**/*.ts\" --write",
+    "fix:prettier": "prettier 'src/**/*.ts' --write",
     "fix:lint": "eslint src --color --ext .ts --fix",
     "fix:markdown": "markdownlint '**/*.md' --fix --ignore node_modules",
-    "___Section:test": "echo \"test: run tests\"",
+    "___Section:test": "echo 'test: run tests'",
     "test": "run-s build test:*",
     "test:lint": "eslint src --color --ext .ts",
-    "test:prettier": "prettier \"src/**/*.ts\" --list-different",
-    "test:spelling": "cspell \"{README.md,.github/*.md,src/**/*.ts}\"",
-    "test:markdown": "markdownlint '**/*.md' --ignore node_modules && cspell \"./**/*.md\"",
-    "test:unit": "nyc --silent ava",
-    "___Section:cov": "echo \"cov: execute coverage reports\"",
-    "cov": "run-s build test:unit cov:html cov:lcov && open-cli coverage/index.html",
-    "cov:html": "nyc report --reporter=html",
-    "cov:lcov": "nyc report --reporter=lcov",
+    "test:prettier": "prettier 'src/**/*.ts' --list-different",
+    "test:spelling": "cspell '{README.md,.github/*.md,src/**/*.ts}'",
+    "test:markdown": "markdownlint '**/*.md' --ignore node_modules && cspell './**/*.md'",
+    "test:unit": "nyc --temp-dir artifacts/.nyc_output ava",
+    "test-silent-cov": "nyc --silent --temp-dir artifacts/.nyc_output ava",
+    "test-clean": "run-s test clean",
+    "___Section:cov": "echo 'cov: execute coverage reports'",
+    "cov": "run-s build test:unit cov:html cov:lcov && open-cli artifacts/coverage/index.html",
+    "cov:html": "nyc report --reporter=html --report-dir=artifacts/coverage --temp-dir artifacts/.nyc_output",
+    "cov:lcov": "nyc report --reporter=lcov --report-dir=artifacts/coverage --temp-dir artifacts/.nyc_output",
     "cov:check": "nyc report && nyc check-coverage --lines 100 --functions 100 --branches 100",
-    "___Section:docs": "echo \"docs: create documentation\"",
-    "doc": "run-s doc:html && open-cli docs/index.html",
+    "___Section:docs": "echo 'docs: create documentation'",
+    "doc": "run-s doc:html && open-cli artifacts/docs/index.html",
     "doc:html": "typedoc src/",
     "doc:json": "typedoc src/ --json docs/typedoc.json",
-    "___Section:clean": "echo \"clean unimportant directories\"",
-    "clean": "run-p clean:*",
-    "clean:build": "rm -r build",
-    "clean:nyc": "rm -r .nyc_output",
-    "clean:docs": "rm -r docs",
-    "___Section:cicd": "echo \"run CI/CD commands\"",
+    "___Section:clean": "echo 'clean unimportant directories'",
+    "clean": "rm -r artifacts",
+    "___Section:cicd": "echo 'run CI/CD commands'",
     "lint-staged": "lint-staged",
     "release": "shipjs prepare",
-    "___Section:underhood": "echo \"run commands under the hood\"",
+    "___Section:underhood": "echo 'run commands under the hood'",
     "prepare": "husky install"
   },
+  "dependencies": {},
   "devDependencies": {
     "@ava/typescript": "^3.0.1",
     "@commitlint/cli": "^17.0.3",
@@ -86,8 +91,8 @@
     "typescript": "^4.7.4"
   },
   "files": [
-    "build/main",
-    "build/module",
+    "artifacts/build/main",
+    "artifacts/build/module",
     "!**/*.test.*",
     "!**/*.json",
     "CHANGELOG.md",
@@ -99,12 +104,12 @@
     "timeout": "60s",
     "typescript": {
       "rewritePaths": {
-        "src/": "build/main/"
+        "src/": "artifacts/build/main/"
       },
       "compile": "tsc"
     },
     "files": [
-      "!build/module/**"
+      "!artifacts/build/module/**"
     ]
   },
   "nyc": {
@@ -130,8 +135,8 @@
       "sourceType": "module"
     },
     "ignorePatterns": [
-      "build",
-      "docs"
+      "artifacts/build",
+      "artifacts/docs"
     ],
     "plugins": [
       "@typescript-eslint"
@@ -157,14 +162,16 @@
       "editorconfig",
       "esnext",
       "globby",
+      "idek",
+      "lcov",
       "mkdir",
+      "ochem",
       "prettierignore",
       "sandboxed",
+      "snyk",
       "transpiled",
       "typedoc",
-      "untracked",
-      "lcov",
-      "snyk"
+      "untracked"
     ],
     "ignorePaths": [
       "package.json",
