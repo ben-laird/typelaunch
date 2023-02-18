@@ -15,6 +15,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "test": "vitest",
+    "test-once": "vitest --run",
+    "coverage": "vitest run --coverage && open-cli coverage/index.html",
     "preview": "vite preview"
   },
   "devDependencies": {
