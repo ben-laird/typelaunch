@@ -1,31 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "CommonJS",
-    "moduleResolution": "node",
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "Node",
     "strict": true,
-    "esModuleInterop": true,
-    "outDir": "artifacts/build/main",
-    "rootDir": "src",
     "resolveJsonModule": true,
-    "declaration": true,
-    "declarationMap": true,
-    "inlineSourceMap": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "traceResolution": false,
-    "listEmittedFiles": false,
-    "listFiles": false,
-    "pretty": true,
+    "skipLibCheck": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules/**"],
-  "compileOnSave": false,
-  "typedocOptions": {
-    "entryPoints": ["src/index.ts"],
-    "out": "artifacts/docs",
-    "exclude": "**/*.test.ts"
-  }
+  "include": ["src"]
 }

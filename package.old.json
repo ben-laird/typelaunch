@@ -1,0 +1,195 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A blank canvas of a repository",
+  "author": "John Appleseed <johnnyappleseed@example.com>",
+  "main": "artifacts/build/main/index.js",
+  "typings": "artifacts/build/main/index.d.ts",
+  "module": "artifacts/build/module/index.js",
+  "repository": "https://github.com/",
+  "homepage": "https://github.com/",
+  "bugs": {
+    "url": "https://github.com/",
+    "email": "johnnyappleseed@example.com"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "scripts": {
+    "sections": "run-s ___Section:*",
+    "___Section:build": "echo 'build: build the project'",
+    "build": "run-p build:*",
+    "build:main": "tsc -p tsconfig.json",
+    "build:module": "tsc -p tsconfig.module.json",
+    "___Section:watch": "echo 'watch: run commands in watch mode'",
+    "watch:build": "tsc -p tsconfig.json -w",
+    "watch:test": "nyc --silent ava --watch",
+    "___Section:check": "echo 'check: quickly check codebase runs correctly'",
+    "check": "run-s check:*",
+    "check:build": "npm run build",
+    "check:ts": "ts-node src/index.ts",
+    "check:js": "node artifacts/build/main/index.js",
+    "___Section:fix": "echo 'fix: run linters and formatters to prettify codebase'",
+    "fix": "run-s fix:*",
+    "fix:prettier": "prettier 'src/**/*.ts' --write",
+    "fix:lint": "eslint src --color --ext .ts --fix",
+    "fix:markdown": "markdownlint '**/*.md' --fix --ignore node_modules",
+    "___Section:test": "echo 'test: run tests'",
+    "test": "run-s build test:*",
+    "test:lint": "eslint src --color --ext .ts",
+    "test:prettier": "prettier 'src/**/*.ts' --list-different",
+    "test:spelling": "cspell '{README.md,.github/*.md,src/**/*.ts}'",
+    "test:markdown": "markdownlint '**/*.md' --ignore node_modules && cspell './**/*.md'",
+    "test:unit": "nyc --temp-dir artifacts/.nyc_output ava",
+    "test-silent-cov": "nyc --silent --temp-dir artifacts/.nyc_output ava",
+    "test-clean": "run-s test clean",
+    "___Section:cov": "echo 'cov: execute coverage reports'",
+    "cov": "run-s build test:unit cov:html cov:lcov && open-cli artifacts/coverage/index.html",
+    "cov:html": "nyc report --reporter=html --report-dir=artifacts/coverage --temp-dir artifacts/.nyc_output",
+    "cov:lcov": "nyc report --reporter=lcov --report-dir=artifacts/coverage --temp-dir artifacts/.nyc_output",
+    "cov:check": "nyc report && nyc check-coverage --lines 100 --functions 100 --branches 100",
+    "___Section:docs": "echo 'docs: create documentation'",
+    "doc": "run-s doc:html && open-cli artifacts/docs/index.html",
+    "doc:html": "typedoc src/",
+    "doc:json": "typedoc src/ --json docs/typedoc.json",
+    "___Section:clean": "echo 'clean unimportant directories'",
+    "clean": "rm -r artifacts",
+    "___Section:cicd": "echo 'run CI/CD commands'",
+    "lint-staged": "lint-staged",
+    "release": "shipjs prepare",
+    "___Section:underhood": "echo 'run commands under the hood'",
+    "prepare": "husky install"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@ava/typescript": "^3.0.1",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@types/node": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
+    "ava": "^4.3.1",
+    "cspell": "^6.4.1",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
+    "markdownlint": "^0.26.1",
+    "markdownlint-cli": "^0.32.1",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^15.1.0",
+    "open-cli": "^7.0.1",
+    "prettier": "^2.7.1",
+    "shipjs": "0.24.4",
+    "source-map-support": "^0.5.21",
+    "standard-version": "^9.5.0",
+    "ts-node": "^10.9.1",
+    "tsc-files": "^1.1.3",
+    "typedoc": "^0.23.8",
+    "typescript": "^4.7.4"
+  },
+  "files": [
+    "artifacts/build/main",
+    "artifacts/build/module",
+    "!**/*.test.*",
+    "!**/*.json",
+    "CHANGELOG.md",
+    ".github/LICENSE",
+    "README.md"
+  ],
+  "ava": {
+    "failFast": true,
+    "timeout": "60s",
+    "typescript": {
+      "rewritePaths": {
+        "src/": "artifacts/build/main/"
+      },
+      "compile": "tsc"
+    },
+    "files": [
+      "!artifacts/build/module/**"
+    ]
+  },
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "exclude": [
+      "**/*.test.js"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "ignorePatterns": [
+      "artifacts/build",
+      "artifacts/docs"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "spaced-comment": [
+        "warn",
+        "always"
+      ],
+      "yoda": [
+        "warn",
+        "never"
+      ]
+    }
+  },
+  "cspell": {
+    "version": "0.2",
+    "language": "en",
+    "words": [
+      "codecov",
+      "commitlint",
+      "dependabot",
+      "editorconfig",
+      "esnext",
+      "globby",
+      "idek",
+      "lcov",
+      "mkdir",
+      "ochem",
+      "prettierignore",
+      "sandboxed",
+      "snyk",
+      "transpiled",
+      "typedoc",
+      "untracked"
+    ],
+    "ignorePaths": [
+      "package.json",
+      "package-lock.json",
+      "yarn.lock",
+      "tsconfig.json",
+      "tsconfig.module.json",
+      "node_modules/**"
+    ],
+    "allowCompoundWords": true
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.md": "markdownlint --fix --ignore node_modules",
+    "**/*.ts": "tsc-files --noEmit"
+  }
+}
