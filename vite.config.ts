@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
@@ -9,6 +9,13 @@ export default defineConfig({
       name: "typelaunch-starter",
       fileName: "typelaunch-starter",
     },
+  },
+  test: {
+    includeSource: ["src/**/*.{js,ts}"],
+    coverage: { reporter: ["html-spa"] },
+  },
+  define: {
+    "import.meta.vitest": "undefined",
   },
   plugins: [dts()],
 });
