@@ -12,7 +12,7 @@ export default defineConfig({
   },
   test: {
     includeSource: ["src/**/*.{js,ts}"],
-    coverage: { reporter: ["html-spa"] },
+    coverage: { reporter: ["html-spa", "text"] },
   },
   define: {
     "import.meta.vitest": "undefined",
