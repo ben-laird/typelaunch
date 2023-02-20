@@ -1,7 +1,7 @@
 {
   "name": "typelaunch-starter",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
   "main": "./dist/typelaunch-starter.umd.cjs",
   "module": "./dist/typelaunch-starter.js",
@@ -13,16 +13,19 @@
     }
   },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "test": "vitest",
-    "test-once": "vitest --run",
-    "coverage": "vitest run --coverage",
-    "coverage-detailed": "vitest run --coverage && open-cli coverage/index.html",
+    "dev": "vitest",
+    "build": "vite build",
+    "lint": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "cov": "vitest run --coverage",
+    "cov:watch": "vitest --coverage",
+    "cov:detail": "vitest run --coverage && open-cli coverage/index.html",
     "preview": "vite preview",
     "change": "changeset",
-    "prerelease": "changeset version",
-    "release": "changeset publish"
+    "change:empty": "changeset --empty",
+    "review": "changeset version",
+    "release": "pnpm run build && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
