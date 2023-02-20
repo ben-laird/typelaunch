@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report! Please fill out as many fields as you can. The more informatino you can provide, the better the fix will be.
+        Thanks for taking the time to fill out this bug report! Please fill out as many fields as you can. The more information you can provide, the better the fix will be.
   - type: input
     id: contact
     attributes:
@@ -40,7 +40,7 @@ body:
     attributes:
       label: Actual Behavior
       description: What behavior actually happened that is considered a bug?
-      placeholder: Describe how it actally worked...
+      placeholder: Describe how it actually worked...
     validations:
       required: true
   - type: textarea
@@ -101,7 +101,7 @@ body:
     attributes:
       label: Relevant log output
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
+      render: sh
   - type: markdown
     attributes:
       value: "Code of Conduct"
