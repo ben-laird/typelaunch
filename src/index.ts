@@ -1,5 +1,3 @@
-import { log } from "../test/test.ctx";
-
 /**
  * A simple function meant to demonstrate all the features of TypeLaunch, from testing to docs to more!
  * This simply greets the user in the console and returns what it sent to the console.
@@ -13,6 +11,7 @@ export const greet = (name: string, debug: boolean = false) => {
 };
 
 if (import.meta.vitest) {
+  const { log } = await import("../test/test.ctx");
   const { it, expect } = import.meta.vitest;
 
   const greetTest = (name: string) => {
