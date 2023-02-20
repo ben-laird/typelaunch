@@ -1,6 +1,7 @@
 {
   "recommendations": [
     // Definitely recommend!
+    "zixuanchen.vitest-explorer",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "DavidAnson.vscode-markdownlint",
