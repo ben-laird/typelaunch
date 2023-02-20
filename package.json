@@ -21,7 +21,6 @@
     "cov": "vitest run --coverage",
     "cov:watch": "vitest --coverage",
     "cov:detail": "vitest run --coverage && open-cli coverage/index.html",
-    "preview": "vite preview",
     "change": "changeset",
     "change:empty": "changeset --empty",
     "review": "changeset version",
