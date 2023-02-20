@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  setup:
+  run:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -27,23 +27,9 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-  test-with-coverage:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
       - name: Run Tests
         run: pnpm run cov
-
-  changeset:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
       - name: Check if PR has Changeset
         run: pnpm changeset status --since=main
-
-  lint:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
       - name: Run Linters
         run: pnpm run lint
