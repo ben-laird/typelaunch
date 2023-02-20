@@ -22,6 +22,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.0",
     "@types/node": "^18.14.0",
     "@vitest/coverage-c8": "^0.28.5",
     "fast-check": "^3.6.3",
