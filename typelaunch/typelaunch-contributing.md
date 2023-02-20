@@ -15,7 +15,7 @@ For simplicity, the most important tenets of TypeLaunch are:
 
 Look for any issues you could help with. TypeLaunch does not use assignees for issues to allow for anyone to fork and work on whatever suits them.
 
-Next, clone TypeLaunch to your local machine. Run `npm install` at the root of the project to get your packages delivered right to your `node_modules` directory and get husky hooks up and running. If you intend to write any code, run `npm run watch:build` and in a new terminal instance run `npm run watch:test`. Oftentimes just running the latter is okay, since TypeLaunch is just meant to be a template repo and requires no full build.
+Next, clone TypeLaunch to your local machine. Run `pnpm install` at the root of the project to get your packages delivered right to your `node_modules` directory. If you intend to write any code, run `pnpm run dev`.
 
 ## Adding an Issue
 
