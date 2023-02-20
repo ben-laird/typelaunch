@@ -1,0 +1,42 @@
+name: Check Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node v16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Install Dependencies
+        run: pnpm ci
+
+  test-with-coverage:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Tests
+        run: pnpm run cov
+
+  changeset:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if PR has Changeset
+        run: pnpm changeset status --since=main
+
+  lint:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Linters
+        run: pnpm run lint
