@@ -14,6 +14,8 @@
   },
   "scripts": {
     "dev": "vitest",
+    "dev:web": "vite",
+    "preview": "vite preview",
     "build": "vite build",
     "lint": "tsc",
     "test": "vitest run",
