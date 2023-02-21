@@ -4,7 +4,7 @@
  * @param name - The name of the person you'd like to greet
  * @returns A string of the greeting with the name inserted
  */
-export const greet = (name: string, debug: boolean = false) => {
+export const greet = (name: string, debug = false) => {
   const message = `Hello there, ${name}`;
   if (debug) console.log(message); // TODO take a look at Todo Tree!
   return message;
