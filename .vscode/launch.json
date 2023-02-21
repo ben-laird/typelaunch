@@ -10,5 +10,11 @@
       "request": "launch",
       "type": "node-terminal"
     },
+    {
+      "command": "pnpm run test",
+      "name": "Debug tests with PNPM",
+      "request": "launch",
+      "type": "node-terminal"
+    }
   ]
 }
